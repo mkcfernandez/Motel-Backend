@@ -33,7 +33,6 @@ namespace Motel.Application.Features.MovimientoHabitacion.Commands.MovimientoHab
             await SendEmail(newEntity);
 
             return newEntity.Id;
-
         }
 
         private async Task SendEmail(MovimientoHabitacionModel movimientoHabitacion)
@@ -53,8 +52,6 @@ namespace Motel.Application.Features.MovimientoHabitacion.Commands.MovimientoHab
             {
                 _logger.LogError($"Error al intentar enviar el email del registro de {movimientoHabitacion.Id}");
             }
-
-
         }
     }
 }
