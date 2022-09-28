@@ -4,7 +4,7 @@ using Motel.Infrastructure.Persistence;
 
 namespace Motel.Infrastructure.Repositories
 {
-    public class MovimietnoHabitacionRepository : RepositoryBase<MovimientoHabitacionModel>, IMovimientoHabitacionRepository
+    public class MovimietnoHabitacionRepository : RepositoryBase<MovimientoHabitacionEntity>, IMovimientoHabitacionRepository
     {
         public MovimietnoHabitacionRepository(MotelDbContext context) : base(context)
         {

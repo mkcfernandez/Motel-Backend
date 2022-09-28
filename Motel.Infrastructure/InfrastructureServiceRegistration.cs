@@ -21,6 +21,8 @@ namespace Motel.Infrastructure
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
 
             services.AddScoped<IMovimientoHabitacionRepository, MovimietnoHabitacionRepository>();
+            services.AddScoped<IMotelRepository, MotelRepository>();
+            services.AddScoped<ITarifaRepository, TarifaRepository>();
 
             services.Configure<EmailSettings>(c => configuration.GetSection("EmailSettings"));
             services.AddTransient<IEmailService, EmailService>();

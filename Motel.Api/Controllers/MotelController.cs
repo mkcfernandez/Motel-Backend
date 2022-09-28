@@ -1,29 +1,29 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Motel.Application.Features.MovimientoHabitacion.Commands.MovimientoHabitacionRegistrarEntrada;
+using Motel.Application.Features.Motel.Queries;
 using System.Net;
 
 namespace Motel.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class MovimientoHabitacionController : ControllerBase
+    public class MotelController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public MovimientoHabitacionController(IMediator mediator)
+        public MotelController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost(Name = "RegistrarEntrada")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<ActionResult<int>> CreateStreamer([FromBody] RegistrarEntradaCommand command)
+        [HttpGet(Name = "MotelListado")]
+        [ProducesResponseType(typeof(IEnumerable<MotelsVm>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<IEnumerable<MotelsVm>>> MotelListado()
         {
             try
             {
-                var response = await _mediator.Send(command);
-                if (response == 0)
+                var response = await _mediator.Send(new MotelesListaQuery());
+                if (response == null)
                 {
                     return NotFound();
                 }

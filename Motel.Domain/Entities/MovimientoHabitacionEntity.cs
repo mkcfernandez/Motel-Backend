@@ -1,10 +1,11 @@
 ﻿using Motel.Domain.Entities.Common;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Motel.Domain.Entities
 {
-    public class MovimientoHabitacionModel : BaseDomainModel
+    [Table("MovimientoHabitacion", Schema = "Operativo")]
+    public class MovimientoHabitacionEntity : BaseDomainModel
     {
-        public int movimiento_habitacion_id { get; set; }
         public int habitacion_id { get; set; }
         public int tarifa_id { get; set; }
         public int forma_pago_id { get; set; }

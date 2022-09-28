@@ -31,6 +31,8 @@ namespace Motel.Infrastructure.Persistence
             return base.SaveChangesAsync(cancellationToken);
         }
 
-        public DbSet<MovimientoHabitacionModel>? movimientosHabitacion { get; set; }
+        public DbSet<MovimientoHabitacionEntity>? movimientosHabitacion { get; set; }
+        public DbSet<MotelEntity>? Motel { get; set; }
+        public DbSet<TarifaEntity>? Tarifa { get; set; }
     }
 }

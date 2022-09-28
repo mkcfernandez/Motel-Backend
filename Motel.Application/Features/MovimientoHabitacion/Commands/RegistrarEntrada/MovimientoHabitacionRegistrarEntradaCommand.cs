@@ -2,7 +2,7 @@
 
 namespace Motel.Application.Features.MovimientoHabitacion.Commands.MovimientoHabitacionRegistrarEntrada
 {
-    public class MovimientoHabitacionRegistrarEntradaCommand : IRequest<int>
+    public class RegistrarEntradaCommand : IRequest<int>
     {
         public int habitacion_id { get; set; }
         public int tarifa_id { get; set; }

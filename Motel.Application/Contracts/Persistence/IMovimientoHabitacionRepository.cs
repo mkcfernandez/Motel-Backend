@@ -3,7 +3,7 @@ using Motel.Domain.Entities;
 
 namespace Motel.Application.Contracts
 {
-    public interface IMovimientoHabitacionRepository : IAsyncRepository<MovimientoHabitacionModel>
+    public interface IMovimientoHabitacionRepository : IAsyncRepository<MovimientoHabitacionEntity>
     {
     }
 }

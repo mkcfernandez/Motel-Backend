@@ -12,13 +12,16 @@
 
   <ItemGroup>
     <Folder Include="Constants\" />
-    <Folder Include="Features\MovimientoHabitacion\Commands\MovimientoHabitacionRegistrarSalida\" />
-    <Folder Include="Features\MovimientoHabitacion\Commands\MovimientoHabitacionRegistrarLimpieza\" />
-    <Folder Include="Features\MovimientoHabitacion\Commands\MovimientoHabitacionRegistrarDetalle\" />
-    <Folder Include="Features\MovimientoHabitacion\Commands\MovimientoHabitacionCambioTarifa\" />
-    <Folder Include="Features\MovimientoHabitacion\Commands\MovimientoHabitacionCambioHabitacion\" />
-    <Folder Include="Features\MovimientoHabitacion\Commands\MovimientoHabitacionActualizar\" />
+    <Folder Include="Features\Motel\Commands\" />
+    <Folder Include="Features\MovimientoHabitacion\Commands\RegistrarSalida\" />
+    <Folder Include="Features\MovimientoHabitacion\Commands\RegistrarLimpieza\" />
+    <Folder Include="Features\MovimientoHabitacion\Commands\RegistrarDetalle\" />
+    <Folder Include="Features\MovimientoHabitacion\Commands\CambioTarifa\" />
+    <Folder Include="Features\MovimientoHabitacion\Commands\CambioHabiacion\" />
     <Folder Include="Features\MovimientoHabitacion\Queries\" />
+    <Folder Include="Features\Tarifa\Commands\" />
+    <Folder Include="Features\TipoHabitacion\Commands\" />
+    <Folder Include="Features\TipoHabitacion\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

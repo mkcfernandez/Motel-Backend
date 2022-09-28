@@ -8,7 +8,7 @@ using Motel.Domain.Entities;
 
 namespace Motel.Application.Features.MovimientoHabitacion.Commands.MovimientoHabitacionRegistrarEntrada
 {
-    public class MovimientoHabitacionRegistrarEntradaCommandHandler : IRequestHandler<MovimientoHabitacionRegistrarEntradaCommand, int>
+    public class MovimientoHabitacionRegistrarEntradaCommandHandler : IRequestHandler<RegistrarEntradaCommand, int>
     {
         private readonly IMovimientoHabitacionRepository _movimientoHabitacionRepository;
         private readonly IMapper _mapper;
@@ -23,9 +23,11 @@ namespace Motel.Application.Features.MovimientoHabitacion.Commands.MovimientoHab
             _logger = logger;
         }
 
-        public async Task<int> Handle(MovimientoHabitacionRegistrarEntradaCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(RegistrarEntradaCommand request, CancellationToken cancellationToken)
         {
-            var entity = _mapper.Map<MovimientoHabitacionModel>(request);
+            //var salida = 
+
+            var entity = _mapper.Map<MovimientoHabitacionEntity>(request);
             var newEntity = await _movimientoHabitacionRepository.AddAsync(entity);
 
             _logger.LogInformation($"Movimiento Habitación {newEntity} fue registrado exitosamente");
@@ -35,7 +37,7 @@ namespace Motel.Application.Features.MovimientoHabitacion.Commands.MovimientoHab
             return newEntity.Id;
         }
 
-        private async Task SendEmail(MovimientoHabitacionModel movimientoHabitacion)
+        private async Task SendEmail(MovimientoHabitacionEntity movimientoHabitacion)
         {
             var email = new Email
             {
